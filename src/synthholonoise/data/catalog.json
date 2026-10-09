@@ -1,0 +1,917 @@
+{
+  "model": "SHN",
+  "version": "1.0.0",
+  "native_shape": [
+    1024,
+    1024
+  ],
+  "reference_range": [
+    0,
+    255
+  ],
+  "source_bank_sha256": "db45a7f239d398f7f6e6e0549e0b7253f1d9aa8271fe4d2a0ab7b042a638c5c2",
+  "presets": [
+    {
+      "id": "001",
+      "source_date": "20250913",
+      "templates": [
+        {
+          "id": "001",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 0,
+          "sigmas": {
+            "lowfield": 0.0326719544827938,
+            "row": 0.0090809082612395,
+            "column": 0.0112562952563166,
+            "fixed": 0.4984014630317688,
+            "dynamic": 8.3868646624984
+          },
+          "rho_measured": 0.0539341531693935,
+          "rho": 0.0539341531693935,
+          "source_corrected_mean": 71.72605895996094,
+          "file": "templates/001.npz",
+          "bytes": 940730,
+          "sha256": "c84abf22764be4b4864e7947b60df6b97ec5b110fcdfbf660f7b29c97bfda948"
+        },
+        {
+          "id": "002",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 1,
+          "sigmas": {
+            "lowfield": 0.0252634640783071,
+            "row": 0.0052139526233077,
+            "column": 0.0125540560111403,
+            "fixed": 0.8153097033500671,
+            "dynamic": 9.4352227453107
+          },
+          "rho_measured": 0.1188550665974617,
+          "rho": 0.1188550665974617,
+          "source_corrected_mean": 71.76497650146484,
+          "file": "templates/002.npz",
+          "bytes": 941908,
+          "sha256": "3f2a32a7bf36199e534ba385bb6c8af5c6fd106754f329560f792f317ed25a12"
+        },
+        {
+          "id": "003",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 2,
+          "sigmas": {
+            "lowfield": 0.0224887002259492,
+            "row": 0.0021554504055529,
+            "column": 0.0052432757802307,
+            "fixed": 0.3406606316566467,
+            "dynamic": 7.3385065796861
+          },
+          "rho_measured": 0.0300156883895397,
+          "rho": 0.0300156883895397,
+          "source_corrected_mean": 78.19302368164062,
+          "file": "templates/003.npz",
+          "bytes": 941902,
+          "sha256": "3e0de6fc8eb30b22bfef6427aba51212fc672719bace54bd902094c359aabadb"
+        },
+        {
+          "id": "004",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 3,
+          "sigmas": {
+            "lowfield": 0.0259360242635011,
+            "row": 0.0040762433782219,
+            "column": 0.0079229371622204,
+            "fixed": 0.7717345356941223,
+            "dynamic": 8.3868646624984
+          },
+          "rho_measured": 0.061181578785181,
+          "rho": 0.061181578785181,
+          "source_corrected_mean": 78.15245056152344,
+          "file": "templates/004.npz",
+          "bytes": 946979,
+          "sha256": "703ab07208795548f679db2d6a19bfb3c3ff5c66f78c8752b1ea86aa20b099c0"
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "source_date": "20251113",
+      "templates": [
+        {
+          "id": "005",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 4,
+          "sigmas": {
+            "lowfield": 0.0232465993613004,
+            "row": 0.0153640573844313,
+            "column": 0.0127121303230524,
+            "fixed": 0.2861262559890747,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.0996887236833572,
+          "rho": 0.0996887236833572,
+          "source_corrected_mean": 80.13585662841797,
+          "file": "templates/005.npz",
+          "bytes": 937461,
+          "sha256": "99f7e413350a1e126508a13a5839c4dc5d780d5b0d001a7718e0a8d97f4a40b7"
+        },
+        {
+          "id": "006",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 5,
+          "sigmas": {
+            "lowfield": 0.0236624665558338,
+            "row": 0.0156528204679489,
+            "column": 0.0133070209994912,
+            "fixed": 0.2846331298351288,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.0639922693371772,
+          "rho": 0.0639922693371772,
+          "source_corrected_mean": 80.11919403076172,
+          "file": "templates/006.npz",
+          "bytes": 939758,
+          "sha256": "914ce6c1c1d222a6ae0490f3a8eccd540da6b75157fbf39e6310e1b693d6ba9f"
+        },
+        {
+          "id": "007",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 6,
+          "sigmas": {
+            "lowfield": 0.0293874219059944,
+            "row": 0.0178309418261051,
+            "column": 0.0138232894241809,
+            "fixed": 0.4082253873348236,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": 0.0357663333415985,
+          "rho": 0.0357663333415985,
+          "source_corrected_mean": 85.25414276123047,
+          "file": "templates/007.npz",
+          "bytes": 937495,
+          "sha256": "058999b4a8cab09cf299842b4e7d0519d8084a8ab6125b78f6132edf3a05960d"
+        },
+        {
+          "id": "008",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 7,
+          "sigmas": {
+            "lowfield": 0.0255764871835708,
+            "row": 0.0120112337172031,
+            "column": 0.0095452545210719,
+            "fixed": 0.398764431476593,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": 0.0115514155477285,
+          "rho": 0.0115514155477285,
+          "source_corrected_mean": 85.22737121582031,
+          "file": "templates/008.npz",
+          "bytes": 937393,
+          "sha256": "4ed07c1623c00aa061662bdd96a998636422f04b6d2cf9597da1857b8f91e76b"
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "source_date": "20251114",
+      "templates": [
+        {
+          "id": "009",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 8,
+          "sigmas": {
+            "lowfield": 0.0172492116689682,
+            "row": 0.0096768997609615,
+            "column": 0.0131881553679704,
+            "fixed": 0.1787628084421157,
+            "dynamic": 4.1934323312492
+          },
+          "rho_measured": 0.0308582093566656,
+          "rho": 0.0308582093566656,
+          "source_corrected_mean": 82.09850311279297,
+          "file": "templates/009.npz",
+          "bytes": 937556,
+          "sha256": "e0c08872020161589ab3144dcd381f6f8e8155468ca71c468b3f1f335d399bec"
+        },
+        {
+          "id": "010",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 9,
+          "sigmas": {
+            "lowfield": 0.0184380412101745,
+            "row": 0.009869965724647,
+            "column": 0.0139465043321251,
+            "fixed": 0.1749606430530548,
+            "dynamic": 4.1934323312492
+          },
+          "rho_measured": 0.0443724952638149,
+          "rho": 0.0443724952638149,
+          "source_corrected_mean": 82.09011840820312,
+          "file": "templates/010.npz",
+          "bytes": 938220,
+          "sha256": "83a890ae65b17878249ac4c43520e8899fe3fb73f2af2b9744596bee5f2cb022"
+        },
+        {
+          "id": "011",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 10,
+          "sigmas": {
+            "lowfield": 0.0010250307386741,
+            "row": 0.0005307263345457,
+            "column": 0.0003233352617826,
+            "fixed": 0.0353166013956069,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": 0.0110477162525057,
+          "rho": 0.0110477162525057,
+          "source_corrected_mean": 85.86622619628906,
+          "file": "templates/011.npz",
+          "bytes": 935404,
+          "sha256": "a8fe70385efe0a99e3d82e247aeab9da369c9832358dd06a4a63be17f744209e"
+        },
+        {
+          "id": "012",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 11,
+          "sigmas": {
+            "lowfield": 0.0017624725587666,
+            "row": 0.0009540783357806,
+            "column": 0.0005942991119809,
+            "fixed": 0.0439064279198646,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": -0.0030194830615073,
+          "rho": 0.0,
+          "source_corrected_mean": 85.84535217285156,
+          "file": "templates/012.npz",
+          "bytes": 937181,
+          "sha256": "665eb0d0ec973642ff6ebbccb39ee7604009e036a7732e706bc11dc58b05101e"
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "source_date": "20251119",
+      "templates": [
+        {
+          "id": "013",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 12,
+          "sigmas": {
+            "lowfield": 0.0715487748384475,
+            "row": 0.0442414060235023,
+            "column": 0.0431406274437904,
+            "fixed": 0.4709347486495971,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": -0.0023559536784887,
+          "rho": 0.0,
+          "source_corrected_mean": 63.528900146484375,
+          "file": "templates/013.npz",
+          "bytes": 939053,
+          "sha256": "078049e8ed52369c7ad0c4a7e838ba11f51a39114a6c000cc2266d590908c112"
+        },
+        {
+          "id": "014",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 13,
+          "sigmas": {
+            "lowfield": 0.0695003122091293,
+            "row": 0.0482157133519649,
+            "column": 0.0403288938105106,
+            "fixed": 0.4658337533473968,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.0289104897528886,
+          "rho": 0.0289104897528886,
+          "source_corrected_mean": 63.54327392578125,
+          "file": "templates/014.npz",
+          "bytes": 938505,
+          "sha256": "30639b406c2b8c255f0e040b3f4eda83d0bdb7a557ed848bf7f90683ad3a420c"
+        },
+        {
+          "id": "015",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 14,
+          "sigmas": {
+            "lowfield": 0.0430354438722133,
+            "row": 0.0183789432048797,
+            "column": 0.0319186188280582,
+            "fixed": 0.3009830415248871,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": -0.0077277682721614,
+          "rho": 0.0,
+          "source_corrected_mean": 66.20640563964844,
+          "file": "templates/015.npz",
+          "bytes": 938514,
+          "sha256": "56f01d96b36c02cc6645a2072d2b08b858f32469ff8c580d1bf481ea2e43ffbe"
+        },
+        {
+          "id": "016",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 15,
+          "sigmas": {
+            "lowfield": 0.0469988696277141,
+            "row": 0.0243793260306119,
+            "column": 0.0316847190260887,
+            "fixed": 0.3057005107402801,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": -0.0073804752901196,
+          "rho": 0.0,
+          "source_corrected_mean": 66.18896484375,
+          "file": "templates/016.npz",
+          "bytes": 938242,
+          "sha256": "1d6efa2d673281ea73850c4bc408b8b7e57cec0f7d6c833f5431aa78753fd3b7"
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "source_date": "20251120",
+      "templates": [
+        {
+          "id": "017",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 16,
+          "sigmas": {
+            "lowfield": 0.0120091270655393,
+            "row": 0.0092925708740949,
+            "column": 0.0037629948928952,
+            "fixed": 0.1755778640508651,
+            "dynamic": 4.1934323312492
+          },
+          "rho_measured": 0.0398864448070526,
+          "rho": 0.0398864448070526,
+          "source_corrected_mean": 64.76871490478516,
+          "file": "templates/017.npz",
+          "bytes": 937711,
+          "sha256": "0e1db9e2861065487040449bb5212ca034f38e296b9832293364ae2cdda628ef"
+        },
+        {
+          "id": "018",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 17,
+          "sigmas": {
+            "lowfield": 0.0160826854407787,
+            "row": 0.0060621830634772,
+            "column": 0.0117508368566632,
+            "fixed": 0.1556299924850464,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.0399505235254764,
+          "rho": 0.0399505235254764,
+          "source_corrected_mean": 64.834228515625,
+          "file": "templates/018.npz",
+          "bytes": 937110,
+          "sha256": "3b022e81a42a0696c1a7d4591550cee08c44c5ccf32673389899557a6ab9ab4a"
+        },
+        {
+          "id": "019",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 18,
+          "sigmas": {
+            "lowfield": 0.0010822162730619,
+            "row": 0.000270657648798,
+            "column": 0.0005916777881793,
+            "fixed": 0.0472813472151756,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.0575420185923576,
+          "rho": 0.0575420185923576,
+          "source_corrected_mean": 66.6939697265625,
+          "file": "templates/019.npz",
+          "bytes": 939081,
+          "sha256": "303eb6893085b5e9e5de908ce3a70da855207782a1182badfc5f5dbcb9c78b6e"
+        },
+        {
+          "id": "020",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 19,
+          "sigmas": {
+            "lowfield": 0.0007735579856671,
+            "row": 8.47427363623865e-05,
+            "column": 0.0001452361757401,
+            "fixed": 0.0367478430271148,
+            "dynamic": 2.0967161656246
+          },
+          "rho_measured": 0.0514118075370788,
+          "rho": 0.0514118075370788,
+          "source_corrected_mean": 66.72346496582031,
+          "file": "templates/020.npz",
+          "bytes": 938153,
+          "sha256": "45c9fa75dc8cf1760aa32f3f000b10d9be03807ad56ebe49d01409a61e28c54b"
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "source_date": "20251215",
+      "templates": [
+        {
+          "id": "021",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 20,
+          "sigmas": {
+            "lowfield": 0.0565669722855091,
+            "row": 0.0286569334566593,
+            "column": 0.0140323592349886,
+            "fixed": 0.4651258289813995,
+            "dynamic": 4.1934323312492
+          },
+          "rho_measured": 0.3625141978263855,
+          "rho": 0.3625141978263855,
+          "source_corrected_mean": 58.30450439453125,
+          "file": "templates/021.npz",
+          "bytes": 940728,
+          "sha256": "8531252c5af7085f0a434aa65bceb09699dc6a09a7c0e4d847495af484a3d371"
+        },
+        {
+          "id": "022",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 21,
+          "sigmas": {
+            "lowfield": 0.0620711743831634,
+            "row": 0.0127512421458959,
+            "column": 0.0178053714334964,
+            "fixed": 0.4656688272953033,
+            "dynamic": 5.2417904140615
+          },
+          "rho_measured": 0.4416138231754303,
+          "rho": 0.4416138231754303,
+          "source_corrected_mean": 58.39105987548828,
+          "file": "templates/022.npz",
+          "bytes": 939907,
+          "sha256": "6632dc451cd5f8082e1cd2c0a5650764f93ac139edf953788c0697dc9578e590"
+        },
+        {
+          "id": "023",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 22,
+          "sigmas": {
+            "lowfield": 0.0655450895428657,
+            "row": 0.0418202877044677,
+            "column": 0.0138210132718086,
+            "fixed": 0.4677973687648773,
+            "dynamic": 4.1934323312492
+          },
+          "rho_measured": 0.3864924311637878,
+          "rho": 0.3864924311637878,
+          "source_corrected_mean": 60.41285705566406,
+          "file": "templates/023.npz",
+          "bytes": 941229,
+          "sha256": "66565b42823e74d6b78b55138abc2fa6bc84459efa4d187756ca9417c06b6f41"
+        },
+        {
+          "id": "024",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 23,
+          "sigmas": {
+            "lowfield": 0.0700863376259803,
+            "row": 0.0269694719463586,
+            "column": 0.021951675415039,
+            "fixed": 0.4660722613334656,
+            "dynamic": 5.2417904140615
+          },
+          "rho_measured": 0.4616501033306122,
+          "rho": 0.4616501033306122,
+          "source_corrected_mean": 60.45645904541016,
+          "file": "templates/024.npz",
+          "bytes": 940203,
+          "sha256": "90000732de29b47e7a8a1b37c949a2917d6d2dbc30d27ab93869528270ce4795"
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "source_date": "20251226",
+      "templates": [
+        {
+          "id": "025",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 24,
+          "sigmas": {
+            "lowfield": 0.0315321385860443,
+            "row": 0.0240691415965557,
+            "column": 0.00986048579216,
+            "fixed": 0.2203685790300369,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.3223066031932831,
+          "rho": 0.3223066031932831,
+          "source_corrected_mean": 65.89514923095703,
+          "file": "templates/025.npz",
+          "bytes": 936951,
+          "sha256": "7920856cf37373b33481214ea44278028c3edf72c20a9df8321b456da86e50a6"
+        },
+        {
+          "id": "026",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 25,
+          "sigmas": {
+            "lowfield": 0.0489034913480281,
+            "row": 0.0342635139822959,
+            "column": 0.0173661243170499,
+            "fixed": 0.3025073707103729,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.5122365951538086,
+          "rho": 0.5122365951538086,
+          "source_corrected_mean": 65.7650146484375,
+          "file": "templates/026.npz",
+          "bytes": 939589,
+          "sha256": "774ca4a413694a5eef7a4831de04cb8d09d2e3cf0a771d14f813aa2746950797"
+        },
+        {
+          "id": "027",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 26,
+          "sigmas": {
+            "lowfield": 0.0656678676605224,
+            "row": 0.0575590208172798,
+            "column": 0.0137815289199352,
+            "fixed": 0.4168533384799957,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.3294537961483001,
+          "rho": 0.3294537961483001,
+          "source_corrected_mean": 67.62699890136719,
+          "file": "templates/027.npz",
+          "bytes": 938186,
+          "sha256": "ad6ab7d27cdf17404e0cb151807bb87657622110458301c9ec05a203b347fb22"
+        },
+        {
+          "id": "028",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 27,
+          "sigmas": {
+            "lowfield": 0.0788692310452461,
+            "row": 0.0627427548170089,
+            "column": 0.0177117977291345,
+            "fixed": 0.4691083431243896,
+            "dynamic": 3.1450742484369
+          },
+          "rho_measured": 0.5299459099769592,
+          "rho": 0.5299459099769592,
+          "source_corrected_mean": 67.45832824707031,
+          "file": "templates/028.npz",
+          "bytes": 939303,
+          "sha256": "a18655f5a126af41549042a336c12debcbd3b73590bb5abb0267eb27ae1bce7f"
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "source_date": "20260106",
+      "templates": [
+        {
+          "id": "029",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 28,
+          "sigmas": {
+            "lowfield": 0.0787803679704666,
+            "row": 0.010304469615221,
+            "column": 0.0212039779871702,
+            "fixed": 0.6338122487068176,
+            "dynamic": 14.6770131593722
+          },
+          "rho_measured": 0.0900153219699859,
+          "rho": 0.0900153219699859,
+          "source_corrected_mean": 75.88440704345703,
+          "file": "templates/029.npz",
+          "bytes": 942261,
+          "sha256": "4c2e49c245407fe8a32b6cf9da9b78ab52fd6e97c7e447416848352119785f7f"
+        },
+        {
+          "id": "030",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 29,
+          "sigmas": {
+            "lowfield": 0.061751801520586,
+            "row": 0.0128219742327928,
+            "column": 0.0119804833084344,
+            "fixed": 0.663113534450531,
+            "dynamic": 15.7253712421845
+          },
+          "rho_measured": 0.0922194421291351,
+          "rho": 0.0922194421291351,
+          "source_corrected_mean": 75.99472045898438,
+          "file": "templates/030.npz",
+          "bytes": 943527,
+          "sha256": "26b21b13b58eb22da513b8be38fc43b40ced3df540c0d0c8a8c1b8602ea76023"
+        },
+        {
+          "id": "031",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 30,
+          "sigmas": {
+            "lowfield": 0.077358491718769,
+            "row": 0.0114980293437838,
+            "column": 0.0193109102547168,
+            "fixed": 0.6267140507698059,
+            "dynamic": 14.6770131593722
+          },
+          "rho_measured": 0.0887855589389801,
+          "rho": 0.0887855589389801,
+          "source_corrected_mean": 77.16996765136719,
+          "file": "templates/031.npz",
+          "bytes": 942665,
+          "sha256": "78a333c22ddd962a5ac0a5754a7a73196556f9db73053849975a77a5f3fbfc9e"
+        },
+        {
+          "id": "032",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 31,
+          "sigmas": {
+            "lowfield": 0.0596337020397186,
+            "row": 0.0090425545349717,
+            "column": 0.0131598804146051,
+            "fixed": 0.6580796837806702,
+            "dynamic": 15.7253712421845
+          },
+          "rho_measured": 0.0893102809786796,
+          "rho": 0.0893102809786796,
+          "source_corrected_mean": 77.27330017089844,
+          "file": "templates/032.npz",
+          "bytes": 943990,
+          "sha256": "d2cab8de7b0cc3b57580f9cf2daaf5bfa16840700a5c8b9471cc9cea467ed15a"
+        }
+      ]
+    },
+    {
+      "id": "009",
+      "source_date": "20260206",
+      "templates": [
+        {
+          "id": "033",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 32,
+          "sigmas": {
+            "lowfield": 0.0679915025830268,
+            "row": 0.0113421780988574,
+            "column": 0.0208878051489591,
+            "fixed": 0.448477178812027,
+            "dynamic": 5.2417904140615
+          },
+          "rho_measured": 0.3794330358505249,
+          "rho": 0.3794330358505249,
+          "source_corrected_mean": 74.59526062011719,
+          "file": "templates/033.npz",
+          "bytes": 939773,
+          "sha256": "a7e0c688f75482e69c569b6a203b503d4381a4041c9fe9e6183a141ecb93090d"
+        },
+        {
+          "id": "034",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 33,
+          "sigmas": {
+            "lowfield": 0.0816473513841629,
+            "row": 0.0147085841745138,
+            "column": 0.0208367463201284,
+            "fixed": 0.4856107532978058,
+            "dynamic": 7.3385065796861
+          },
+          "rho_measured": 0.3888391256332397,
+          "rho": 0.3888391256332397,
+          "source_corrected_mean": 74.77938842773438,
+          "file": "templates/034.npz",
+          "bytes": 940875,
+          "sha256": "2c07f1132aaa270295dc5bbe3600c3739f309839d46030d83579d5a573b60862"
+        },
+        {
+          "id": "035",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 34,
+          "sigmas": {
+            "lowfield": 0.0339858494699001,
+            "row": 0.0112502491101622,
+            "column": 0.0121670747175812,
+            "fixed": 0.2579251527786255,
+            "dynamic": 5.2417904140615
+          },
+          "rho_measured": 0.3699287176132202,
+          "rho": 0.3699287176132202,
+          "source_corrected_mean": 79.51803588867188,
+          "file": "templates/035.npz",
+          "bytes": 939847,
+          "sha256": "4ec34fa2b4f13c43fe8b546f8f954b26a89d34224920ea3c6c4741d8784d7d2b"
+        },
+        {
+          "id": "036",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 35,
+          "sigmas": {
+            "lowfield": 0.0572069846093654,
+            "row": 0.0106317158788442,
+            "column": 0.0126168318092823,
+            "fixed": 0.3713720738887787,
+            "dynamic": 7.3385065796861
+          },
+          "rho_measured": 0.3824072182178497,
+          "rho": 0.3824072182178497,
+          "source_corrected_mean": 79.49237060546875,
+          "file": "templates/036.npz",
+          "bytes": 939784,
+          "sha256": "a8ec3b733f920afb1e516c759f73435964606d28167a9f88fccdacab0431483f"
+        }
+      ]
+    },
+    {
+      "id": "010",
+      "source_date": "20260212",
+      "templates": [
+        {
+          "id": "037",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 36,
+          "sigmas": {
+            "lowfield": 0.0732628479599952,
+            "row": 0.0144954230636358,
+            "column": 0.0220628939568996,
+            "fixed": 0.5084245204925537,
+            "dynamic": 6.290148496873799
+          },
+          "rho_measured": 0.4340367317199707,
+          "rho": 0.4340367317199707,
+          "source_corrected_mean": 78.42376708984375,
+          "file": "templates/037.npz",
+          "bytes": 940943,
+          "sha256": "53319c09c872c051b1018105990719ed470b2059c54e4846e5e31ad7b14134bd"
+        },
+        {
+          "id": "038",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 37,
+          "sigmas": {
+            "lowfield": 0.0813639238476753,
+            "row": 0.0142870433628559,
+            "column": 0.0293449629098176,
+            "fixed": 0.5263940095901489,
+            "dynamic": 7.3385065796861
+          },
+          "rho_measured": 0.3777270913124084,
+          "rho": 0.3777270913124084,
+          "source_corrected_mean": 78.54360961914062,
+          "file": "templates/038.npz",
+          "bytes": 940697,
+          "sha256": "082f29ba773f3d1b2fdb73375203ac4b22f60e174e61ecfa08aeae1fb8694f12"
+        },
+        {
+          "id": "039",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 38,
+          "sigmas": {
+            "lowfield": 0.063822291791439,
+            "row": 0.0274883937090635,
+            "column": 0.0596267431974411,
+            "fixed": 0.5046760439872742,
+            "dynamic": 5.2417904140615
+          },
+          "rho_measured": 0.4275936484336853,
+          "rho": 0.4275936484336853,
+          "source_corrected_mean": 80.32372283935547,
+          "file": "templates/039.npz",
+          "bytes": 941406,
+          "sha256": "01926a6417000a56b0025242bfe9863f9d3a5942aafce685699323e327c1d3d1"
+        },
+        {
+          "id": "040",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 39,
+          "sigmas": {
+            "lowfield": 0.0683169960975647,
+            "row": 0.0306474398821592,
+            "column": 0.0974552035331726,
+            "fixed": 0.5204624533653259,
+            "dynamic": 6.290148496873799
+          },
+          "rho_measured": 0.3970982432365417,
+          "rho": 0.3970982432365417,
+          "source_corrected_mean": 80.36712646484375,
+          "file": "templates/040.npz",
+          "bytes": 941109,
+          "sha256": "49f69fe147cbe972b741346e2ebf4801fea390b704e31b73f6128632e3c5f588"
+        }
+      ]
+    },
+    {
+      "id": "011",
+      "source_date": "20260703",
+      "templates": [
+        {
+          "id": "041",
+          "camera": "C001",
+          "variant": "001",
+          "source_template_id": 40,
+          "sigmas": {
+            "lowfield": 0.0812774002552032,
+            "row": 0.0129453232511878,
+            "column": 0.0194055866450071,
+            "fixed": 0.5501330494880676,
+            "dynamic": 8.3868646624984
+          },
+          "rho_measured": 0.4267927408218384,
+          "rho": 0.4267927408218384,
+          "source_corrected_mean": 75.3634262084961,
+          "file": "templates/041.npz",
+          "bytes": 941691,
+          "sha256": "96b3fdf24f441cc40437c4b5951606db60eea64edd2d9e35d8b185fb9dacb7bc"
+        },
+        {
+          "id": "042",
+          "camera": "C001",
+          "variant": "002",
+          "source_template_id": 41,
+          "sigmas": {
+            "lowfield": 0.0948324874043464,
+            "row": 0.0151316812261939,
+            "column": 0.0159293413162231,
+            "fixed": 0.5907183885574341,
+            "dynamic": 9.4352227453107
+          },
+          "rho_measured": 0.4352500140666961,
+          "rho": 0.4352500140666961,
+          "source_corrected_mean": 75.50190734863281,
+          "file": "templates/042.npz",
+          "bytes": 942289,
+          "sha256": "a8a28199d3e34ca2aa96e60b81157f8c0f02070bfeb4ccef9c523876a3372669"
+        },
+        {
+          "id": "043",
+          "camera": "C002",
+          "variant": "001",
+          "source_template_id": 42,
+          "sigmas": {
+            "lowfield": 0.0853380784392356,
+            "row": 0.0147172417491674,
+            "column": 0.0201826132833957,
+            "fixed": 0.5444989800453186,
+            "dynamic": 8.3868646624984
+          },
+          "rho_measured": 0.4313036799430847,
+          "rho": 0.4313036799430847,
+          "source_corrected_mean": 82.15283966064453,
+          "file": "templates/043.npz",
+          "bytes": 942820,
+          "sha256": "aa64aa5bd5a42cc70fbbcce72c96849555cb14558851065ee378591e1f7b52dd"
+        },
+        {
+          "id": "044",
+          "camera": "C002",
+          "variant": "002",
+          "source_template_id": 43,
+          "sigmas": {
+            "lowfield": 0.0993601009249687,
+            "row": 0.0158421322703361,
+            "column": 0.0196754280477762,
+            "fixed": 0.6002889275550842,
+            "dynamic": 9.4352227453107
+          },
+          "rho_measured": 0.4503452181816101,
+          "rho": 0.4503452181816101,
+          "source_corrected_mean": 82.32573699951172,
+          "file": "templates/044.npz",
+          "bytes": 942950,
+          "sha256": "56f9b024d4849db397489734db14dafe3b658821073927f797dc27e59088b802"
+        }
+      ]
+    }
+  ]
+}

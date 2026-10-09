@@ -1,0 +1,7 @@
+include LICENSE README.md README.ja.md
+recursive-include src/synthholonoise *.py *.json *.npz
+recursive-include docs *.md *.png
+recursive-include site *.html *.css *.js *.svg
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include examples *.png

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthholonoise"
+version = "1.0.0"
+description = "SHN: experimentally derived residual noise for synthetic holograms"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "dainakai"}]
+dependencies = ["numpy>=1.26", "scipy>=1.11", "opencv-python-headless>=4.8", "Pillow>=10"]
+keywords = ["holography", "synthetic-data", "noise", "augmentation"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "build>=1"]
+
+[project.urls]
+Repository = "https://github.com/dainakai/SynthHoloNoise"
+Demo = "https://dainakai.github.io/SynthHoloNoise/"
+
+[project.scripts]
+shn = "synthholonoise.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+synthholonoise = ["data/*.json", "data/templates/*.npz"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

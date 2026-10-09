@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SHN adds experimentally derived residual noise to your synthetic holograms. An open Python library with an entirely browser-based demo.">
+  <title>SHN — SynthHoloNoise</title>
+  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="navigation wrap">
+    <a class="brand" href="./" aria-label="SynthHoloNoise ホーム"><img src="./assets/mark.svg" width="34" height="34" alt=""><b>SHN<span>SynthHoloNoise</span></b></a>
+    <nav aria-label="メイン"><a href="#method">手法について</a><a href="https://github.com/dainakai/SynthHoloNoise" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow"><span class="dot"></span> EXPERIMENTALLY DERIVED · PYTHON POWERED</p>
+      <h1>合成ホログラムに、<br><span>実験由来の揺らぎを。</span></h1>
+      <p class="lead">11のプリセットからノイズの形を選び、強度で大きさを調整。<br class="desktop">広い明暗むらから時間的な揺らぎまで、5つの成分を新しく合成します。</p>
+      <div class="intro-meta"><span>画像の計算はこのブラウザ内</span><span>オープンソース</span><span>SHN 1.0</span></div>
+    </section>
+
+    <section class="lab" aria-labelledby="lab-title">
+      <div class="lab-top"><div><p class="eyebrow">INTERACTIVE LAB</p><h2 id="lab-title">ノイズを試す</h2></div><span id="engine-badge" class="badge"><span class="dot"></span>準備中</span></div>
+      <div class="input-bar"><div><b id="input-name">サンプル：合成ホログラム</b><span id="input-info">1024 × 1024 · 8-bit grayscale</span></div><div class="input-actions"><button id="reset-input" class="text-button" type="button">サンプルに戻す</button><button id="open-file" class="button secondary" type="button">自分の画像を開く <span aria-hidden="true">↑</span></button><input id="upload" tabindex="-1" type="file" accept=".png,.tif,.tiff,.bmp,.npy" class="file-input"></div></div>
+      <div class="image-grid">
+        <figure><figcaption><span class="panel-index">01</span><b>Clean</b><span>入力画像</span></figcaption><div class="image-box"><img id="clean-preview" src="./assets/clean.png" alt="ノイズ付与前の合成ホログラム"></div></figure>
+        <figure><figcaption><span class="panel-index">02</span><b>Noisy</b><span>SHNを追加</span></figcaption><div class="image-box"><img id="noisy-preview" src="./assets/clean.png" alt="ノイズ付与後の画像。初回計算前は入力を表示"></div></figure>
+        <figure><figcaption><span class="panel-index">03</span><b>Difference</b><span>Noisy − Clean</span></figcaption><div class="image-box difference-box"><img id="difference-preview" alt="保存画像同士の画素差分" hidden><span id="difference-placeholder">最初の計算を準備しています</span></div></figure>
+      </div>
+      <div class="display-info"><span id="display-scale">CleanとNoisyは同じ表示スケールで比較します</span><span class="color-key"><i></i><span id="difference-scale">青：暗くなった画素 / 赤：明るくなった画素</span></span></div>
+      <div class="stats" aria-label="差分の統計"><div><span>MEAN</span><strong id="stat-mean">—</strong></div><div><span>STD</span><strong id="stat-std">—</strong></div><div><span>MIN</span><strong id="stat-min">—</strong></div><div><span>MAX</span><strong id="stat-max">—</strong></div><p id="stats-unit">差分は入力と同じ単位。整数画像では丸めの影響を含みます。</p></div>
+
+      <div class="controls">
+        <div class="control preset-control"><label for="preset">プリセット <span>模様と基準振幅</span></label><select id="preset"></select><p>番号は識別子です。強さの順ではありません。</p></div>
+        <div class="control strength-control"><div class="label-row"><label for="strength">ノイズ強度</label><input id="strength-number" type="number" min="0" max="2" step="0.05" value="0.5" aria-label="ノイズ強度の数値"></div><input id="strength" type="range" min="0" max="2" step="0.05" value="0.5"><div class="range-labels"><span>0 · 追加なし</span><span>1 · 保存係数</span><span>2</span></div></div>
+        <div class="control seed-control"><label for="seed">乱数シード <span>同じ値で再現</span></label><div class="seed-row"><input id="seed" type="number" min="0" max="4294967295" step="1" value="260628"><button id="new-seed" type="button" title="新しいシード" aria-label="新しい乱数シードを選ぶ">↻</button></div><p id="frame-info">フレーム 0</p></div>
+      </div>
+      <details class="advanced"><summary>詳細設定 <span>カメラ、区間、画素値の単位</span></summary><div class="advanced-grid"><label>元のカメラ<select id="camera"><option>C002</option><option>C001</option></select></label><label>元の時間区間<select id="variant"><option value="001">001</option><option value="002">002</option></select></label><label>入力の値域<select id="value-range"><option value="auto">整数の型から決める</option><option value="0,1">0–1（浮動小数点）</option><option value="0,255">0–255</option><option value="0,4095">0–4095（12-bit）</option><option value="0,65535">0–65535（16-bit）</option></select></label></div><p>基準は8-bitの1階調です。別の値域では、幅 ÷ 255 を振幅に掛けます。画面表示のコントラスト調整はダウンロード画像へ適用しません。</p><p>1024 × 1024以外の入力ではテンプレートを補間します。別の画素サイズや撮影装置を校正する処理ではありません。ブラウザ版は最大2048 × 2048、32 MBのグレースケール画像に対応します。</p></details>
+      <div id="status" class="status" role="status" aria-live="polite">Pythonの計算環境を準備しています。初回はライブラリの読み込みに時間がかかります。</div>
+      <div class="action-bar"><div><button id="generate" class="button primary" disabled>ノイズを計算する <span aria-hidden="true">→</span></button><button id="next-frame" class="button secondary" disabled>次のフレーム</button></div><div><button id="download" class="button secondary" disabled>Noisyを保存 ↓</button><button id="metadata" class="text-button" disabled>設定JSON ↓</button><button id="raw-noise" class="text-button" disabled>追加量NPY ↓</button></div></div>
+      <p class="privacy">選択した画像はサーバーへ送信しません。Python環境はjsDelivr、プリセットはこのサイトから取得します。「次のフレーム」は同じ入力画像のままノイズの時間変化を表示します。</p>
+    </section>
+
+    <section id="method" class="method-section"><div class="method-heading"><p class="eyebrow">THE METHOD</p><h2>形を引き継いで、<br>新しく生成する。</h2><p>SHNは、背景除去後の実験ホログラムに残る構造を統計モデルとして使います。11撮影日、2台のカメラ、2つの時間区間から作った44個のテンプレートが基礎です。</p><a href="https://github.com/dainakai/SynthHoloNoise/blob/main/docs/method.ja.md">抽出方法、数式、制限を読む ↗</a></div><ol class="components"><li><span>01</span><div><h3>広い明暗むら</h3><p>実測テンプレートの回転、反転、位置移動。</p></div></li><li><span>02 / 03</span><div><h3>行と列の偏り</h3><p>横縞と縦縞の1次元テンプレートを位置移動。</p></div></li><li><span>04</span><div><h3>固定された細かな模様</h3><p>保存したフーリエ振幅と、新しいランダム位相から合成。</p></div></li><li><span>05</span><div><h3>時間的な揺らぎ</h3><p>周波数特性と画素値の分布を近似し、前フレームの模様と混合。</p></div></li></ol></section>
+    <section class="python-section"><div><p class="eyebrow">USE YOUR OWN HOLOGRAMS</p><h2>Pythonから、そのまま。</h2><p>静止画には1回の呼び出し。連続画像には、状態を保持するNoiseGeneratorを使います。</p><a class="button secondary" href="https://github.com/dainakai/SynthHoloNoise#quick-start">インストールと使い方 ↗</a></div><pre><code>from synthholonoise import add_noise
+
+noisy = add_noise(
+    clean,
+    preset="011",
+    strength=0.5,
+    seed=260628,
+)</code></pre></section>
+    <aside class="scope"><b>このモデルが表す範囲</b><p>同じ撮影装置と背景除去条件から推定した、画像への加算ノイズです。強度1は保存された成分係数を使う意味で、実験画像全体の標準偏差との一致を保証しません。光子数に応じたショットノイズ、絶対的な明るさの変化、別装置への適合はモデル化していません。</p></aside>
+  </main>
+  <footer class="wrap"><a class="brand" href="./"><b>SHN<span>SynthHoloNoise</span></b></a><span>Empirical structure. New realizations.</span><a href="https://github.com/dainakai/SynthHoloNoise/blob/main/LICENSE">MIT License ↗</a></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
