@@ -1,7 +1,7 @@
 import { loadPyodide } from 'https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs';
 
 const base = new URL('./python/synthholonoise/', import.meta.url);
-const stage = text => self.postMessage({type:'stage', text});
+const stage = (key, values = {}) => self.postMessage({type:'stage', key, values});
 async function fetchBytes(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`File download failed (${response.status}): ${url}`);
@@ -9,9 +9,9 @@ async function fetchBytes(url) {
 }
 let runtime, catalog;
 const boot = (async () => {
-  stage('Pythonを起動しています。初回は実行環境をダウンロードします。');
+  stage('loadingPython');
   runtime = await loadPyodide();
-  stage('数値計算ライブラリを読み込んでいます。画像は送信されません。');
+  stage('loadingPackages');
   await runtime.loadPackage(['numpy', 'scipy', 'opencv-python', 'pillow']);
   const root = '/home/pyodide/synthholonoise';
   runtime.FS.mkdirTree(`${root}/data/templates`);
@@ -52,9 +52,9 @@ def browser_apply():
                 if candidate.dtype == np.int32 and source.mode == 'I' and config['input_name'].lower().endswith('.png') and candidate.min() >= 0 and candidate.max() <= 65535:
                     candidate = candidate.astype(np.uint16)
         if candidate.ndim != 2:
-            raise ValueError('2次元のグレースケール画像を選んでください。RGB画像の自動変換は行いません。')
+            raise ValueError('SHN_INVALID_DIMENSIONS')
         if min(candidate.shape) < 2 or max(candidate.shape) > 2048:
-            raise ValueError('ブラウザ版は各辺2〜2048画素に対応します。大きい画像にはPython版を使ってください。')
+            raise ValueError('SHN_INVALID_SIZE')
         _image = candidate
         _input_id = config['input_id']
     key = json.dumps({k: config[k] for k in ['preset','camera','variant','seed','strength','value_range','input_id']}, sort_keys=True)
@@ -108,7 +108,7 @@ self.onmessage = async event => {
     const profile = preset.templates.find(p => p.camera === config.camera && p.variant === config.variant);
     const path = `/home/pyodide/synthholonoise/data/${profile.file}`;
     if (!runtime.FS.analyzePath(path).exists) {
-      stage(`Preset ${config.preset}のテンプレートを読み込んでいます（約${(profile.bytes/1024/1024).toFixed(1)} MB）。`);
+      stage('loadingTemplate', {preset:config.preset, size:(profile.bytes/1024/1024).toFixed(1)});
       runtime.FS.writeFile(path, await fetchBytes(new URL(`data/${profile.file}`, base)));
     }
     runtime.globals.set('input_bytes', new Uint8Array(bytes));
@@ -117,6 +117,19 @@ self.onmessage = async event => {
     runtime.globals.delete('input_bytes');
     self.postMessage({type:'result', id, result});
   } catch (error) {
-    self.postMessage({type:'error', id, message:String(error)});
+    self.postMessage({type:'error', id, key:errorKey(String(error)), message:String(error)});
   }
 };
+
+// Keep machine-readable stages separate from interface language. Python remains unchanged.
+function errorKey(message) {
+  if (message.includes('SHN_INVALID_DIMENSIONS')) return 'invalidDimensions';
+  if (message.includes('SHN_INVALID_SIZE')) return 'invalidSize';
+  if (message.includes('Floating-point images require value_range')) return 'rangeRequired';
+  if (message.includes('image dtype must be')) return 'invalidDtype';
+  if (message.includes('image contains NaN or infinity')) return 'nonfiniteInput';
+  if (message.includes('image values fall outside value_range') || message.includes('value_range exceeds the storage dtype')) return 'inputOutOfRange';
+  if (/cannot identify image file|Cannot load file containing pickled data|Object arrays cannot be loaded|Failed to interpret file/.test(message)) return 'invalidFile';
+  if (/File download failed|Failed to fetch|NetworkError|Load failed/.test(message)) return 'templateFailed';
+  return 'computationFailed';
+}

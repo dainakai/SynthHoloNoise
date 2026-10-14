@@ -1,5 +1,7 @@
 # SHNの計算と適用範囲
 
+[English](method.md) · [README](../README.ja.md) · [ブラウザデモ](https://dainakai.github.io/SynthHoloNoise/)
+
 SHN（SynthHoloNoise）は、背景除去後の実験ホログラムに残る模様と揺らぎを統計モデルにまとめ、新しい乱数で合成してclean画像へ加える手法です。
 このページでは、実験画像からプリセットを作る工程と、利用者の画像へノイズを加える工程を定義します。
 元の実装名は`addnoise4`、保存モデル名は`experimental_variation_residual_v1`です。

@@ -6,7 +6,7 @@
 
 Choose a preset, set the strength, and keep your existing hologram renderer. SHN synthesizes broad intensity variations, row and column patterns, fixed spatial texture, and temporally correlated fluctuations from measured residual statistics.
 
-[**Try the browser demo →**](https://dainakai.github.io/SynthHoloNoise/) · [日本語](README.ja.md) · [Detailed method / 手法の完全な説明](docs/method.ja.md)
+[**Try the browser demo →**](https://dainakai.github.io/SynthHoloNoise/) · [日本語](README.ja.md) · [Detailed method](docs/method.md) · [手法の詳細](docs/method.ja.md)
 
 ![SHN example: clean, noisy, and their difference](docs/example.png)
 
@@ -149,6 +149,8 @@ SHN is extracted from the author's `addnoise4` / `experimental_variation_residua
 ## Browser demo and GitHub Pages
 
 The Pages site serves static HTML, CSS, JavaScript, Python source, and model assets. Pyodide 314.0.7 runs the package in a Web Worker. Only the selected template (about 1 MB) is fetched; Python and its numerical libraries are additional initial downloads. Files selected in the demo are decoded and processed in browser memory.
+
+The interface defaults to English and can be switched to Japanese. The selected language is remembered in the browser; switching language preserves settings and computed results. The detailed method is available in [English](docs/method.md) and [Japanese](docs/method.ja.md).
 
 The demo supports grayscale PNG, TIFF, BMP, and NPY, up to 2048 pixels on each side and 32 MB per file. It displays clean, noisy, and difference images; exports the noisy image, metadata JSON, and unrounded addition NPY; and previews temporal changes on the same input with **Next frame**. Display contrast enhancement never changes downloaded data.
 
